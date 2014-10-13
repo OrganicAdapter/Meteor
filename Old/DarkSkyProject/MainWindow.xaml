@@ -1,0 +1,90 @@
+﻿<Window x:Class="DarkSkyProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:DarkSkyProject.Converters"
+        Title="Dark Sky Project - Vezérlőpult" Height="480" Width="640" Icon="Images\dsp.ico">
+    
+    <Window.Resources>
+        <converters:BitmapToBitmapImageConverter x:Key="BitmapToBitmapImageConverter" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <Menu>
+            <MenuItem Header="_Fájl">
+                <MenuItem Header="_Megnyitás" Click="FileOpen_Click" />
+                <Separator />
+                <MenuItem Header="_Kilépés" />
+            </MenuItem>
+            <MenuItem Header="_Opciók">
+                <MenuItem Header="_Felhők detektálása..." Click="DetectClouds_Click" />
+                <MenuItem Header="_Esőcseppek detektálása..." Click="DetectRaindrops_Click" />
+            </MenuItem>
+            <MenuItem Header="_Súgó">
+                <MenuItem Header="_Névjegy" />
+            </MenuItem>
+        </Menu>
+        
+        <ToolBarTray Grid.Row="1">
+            <ToolBar>
+                <Button Click="FileOpen_Click">
+                    <Image Source="Images\open.png" />
+                </Button>
+                <Separator />
+                <Button Click="DetectClouds_Click">
+                    <Image Source="Images\cloudiness.png" />
+                </Button>
+                <Button Click="DetectRaindrops_Click">
+                    <Image Source="Images\raindrop.png" />
+                </Button>
+            </ToolBar>
+            
+        </ToolBarTray>
+        
+        <Grid Grid.Row="2">
+            <Grid.Resources>
+                <Style TargetType="ListBox">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+                <Style TargetType="TextBlock">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+                <Style TargetType="Image">
+                    <Setter Property="Margin" Value="5" />
+                </Style>
+            </Grid.Resources>
+            
+            <Grid.RowDefinitions >
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Text="Aktuális képek:" />
+            
+            <ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Common.Keys}" SelectedItem="{Binding SelectedKey}"></ListBox>
+            
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Kiválasztott kép:" />
+
+            <Image Grid.Column="1" Grid.Row="1" Source="{Binding SelectedImage, Converter={StaticResource BitmapToBitmapImageConverter}}" />
+        </Grid>
+
+        <StatusBar Grid.Row="3" Grid.Column="0">
+            <StatusBarItem>
+                <TextBlock Text="" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

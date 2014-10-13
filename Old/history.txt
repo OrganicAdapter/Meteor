@@ -1,0 +1,34 @@
+2014.03.03.
+-------------
+A már meglévõ felhõdetektálós és esõdetektálós modulok új közös indítófelületet kaptak.
+A felhõk mozgását vizsgáló modul még nincs benne a mérete miatt, erre még kitalálunk valamit.
+Jelenleg még nem fejlõdtek az algoritmusok, sem pedig a felület.
+
+2014.03.04.
+-------------
+Közös interfész elkészült, amelyen keresztül az egyes modulok elérik majd az aktuális képeket,
+és részeredményeket.
+
+2014.03.04.
+-------------
+Felho detektálós modul beépítésének javítása, detektálás közben készült képek közös listába vétele.
+Funkció az éjszakai képek detektálására.
+
+2014.03.08.
+-------------
+Felho detektálós tesztek futtatása kb 500-600 képen. Az eredmény sorozatonként változó. 1. sorozatra nagyon alacsony.
+Éjszaka detektálásánál túlcsordulás volt, ez ki lett javítva.
+
+2014.03.11.
+-------------
+Rossz eredmények okának keresése (teszt 1 sorozaton, kb 460 kép):
+	-régi verzió lett a közös projektbe rakva, ezt kijavítva az eredmény jelentosen javult (kb. 76% pontosság)
+	-apróbb javítások után az eredményen ismét javult kb 10%-kal
+	-új funkció: az értékek megállapítása sorozatok alapján, így lényegében az ég nagyobb részét figyeljük a felhok
+		mozgása miatt, ezzel csökkentve a kis belátott területbol adódó hibákat
+		-pontosság az egybe foglalt képek mennyiségétol, és a felhok mozgásának sebességétol is függ
+		-ezzel a módszerrel további javulást sikerült elérni a statisztikában
+
+2014.03.16.
+-------------
+Fõprogram kinézetének fejlesztése, RainDetector modulok kitakarítása.

@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDetector", "CloudDetector\CloudDetector.csproj", "{CFD4C76E-8E46-4F52-8051-86C6201B4601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDetectorDLL", "CloudDetectorDLL\CloudDetectorDLL.csproj", "{C6637587-51CD-4410-91C1-75D252A6067F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainDetector", "RainDetector\RainDetector.csproj", "{5164846B-E821-43B5-8A43-06DBC2DC12A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainDetector.Lib", "RainDetector.Lib\RainDetector.Lib.csproj", "{E598F66E-2464-4F29-BEC5-268310FDAAD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Notes", "_Notes", "{B17B697C-BF0E-4776-B242-D0BB174EC6F3}"
+	ProjectSection(SolutionItems) = preProject
+		history.txt = history.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Libs", "_Libs", "{4B5930E1-3752-4760-B627-D2F579188B56}"
+	ProjectSection(SolutionItems) = preProject
+		Libs\AForge.dll = Libs\AForge.dll
+		Libs\AForge.Imaging.dll = Libs\AForge.Imaging.dll
+		Libs\AForge.Imaging.xml = Libs\AForge.Imaging.xml
+		Libs\AForge.Math.dll = Libs\AForge.Math.dll
+		Libs\AForge.Math.xml = Libs\AForge.Math.xml
+		Libs\AForge.xml = Libs\AForge.xml
+		Libs\ObjectListView.dll = Libs\ObjectListView.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSkyProject", "DarkSkyProject\DarkSkyProject.csproj", "{377E82CC-834B-4BFD-9B1C-6F0DD2996A91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkSkyProject.Common", "DarkSkyProject.Common\DarkSkyProject.Common.csproj", "{FA2BE9A4-430C-4D92-B6C9-0818A8B75044}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://organicadapter.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = RainDetector\\RainDetector.csproj
+		SccProjectName1 = RainDetector
+		SccLocalPath1 = RainDetector
+		SccProjectUniqueName2 = RainDetector.Lib\\RainDetector.Lib.csproj
+		SccProjectName2 = RainDetector.Lib
+		SccLocalPath2 = RainDetector.Lib
+		SccProjectUniqueName3 = CloudDetectorDLL\\CloudDetectorDLL.csproj
+		SccProjectName3 = CloudDetectorDLL
+		SccLocalPath3 = CloudDetectorDLL
+		SccProjectUniqueName4 = CloudDetector\\CloudDetector.csproj
+		SccProjectName4 = CloudDetector
+		SccLocalPath4 = CloudDetector
+		SccProjectUniqueName5 = DarkSkyProject\\DarkSkyProject.csproj
+		SccProjectName5 = DarkSkyProject
+		SccLocalPath5 = DarkSkyProject
+		SccProjectUniqueName6 = DarkSkyProject.Common\\DarkSkyProject.Common.csproj
+		SccProjectName6 = DarkSkyProject.Common
+		SccLocalPath6 = DarkSkyProject.Common
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFD4C76E-8E46-4F52-8051-86C6201B4601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD4C76E-8E46-4F52-8051-86C6201B4601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD4C76E-8E46-4F52-8051-86C6201B4601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD4C76E-8E46-4F52-8051-86C6201B4601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6637587-51CD-4410-91C1-75D252A6067F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6637587-51CD-4410-91C1-75D252A6067F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6637587-51CD-4410-91C1-75D252A6067F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6637587-51CD-4410-91C1-75D252A6067F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5164846B-E821-43B5-8A43-06DBC2DC12A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5164846B-E821-43B5-8A43-06DBC2DC12A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5164846B-E821-43B5-8A43-06DBC2DC12A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5164846B-E821-43B5-8A43-06DBC2DC12A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E598F66E-2464-4F29-BEC5-268310FDAAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E598F66E-2464-4F29-BEC5-268310FDAAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E598F66E-2464-4F29-BEC5-268310FDAAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E598F66E-2464-4F29-BEC5-268310FDAAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{377E82CC-834B-4BFD-9B1C-6F0DD2996A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377E82CC-834B-4BFD-9B1C-6F0DD2996A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377E82CC-834B-4BFD-9B1C-6F0DD2996A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377E82CC-834B-4BFD-9B1C-6F0DD2996A91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA2BE9A4-430C-4D92-B6C9-0818A8B75044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2BE9A4-430C-4D92-B6C9-0818A8B75044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2BE9A4-430C-4D92-B6C9-0818A8B75044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2BE9A4-430C-4D92-B6C9-0818A8B75044}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

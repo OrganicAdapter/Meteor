@@ -1,0 +1,63 @@
+﻿<Window x:Class="CloudDetector.ConfigurationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:CloudDetector.Converters"
+        Title="ConfigurationWindow" Height="300" Width="300" WindowState="Maximized">
+    <Window.Resources>
+        <converters:BitmapToBitmapImageConverter x:Key="BitmapToBitmapImageConverter" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Menu Grid.Row="0" Grid.ColumnSpan="3">
+            <MenuItem Header="File">
+                <MenuItem Header="Cumulus" Click="OpenCumulus" />
+                <MenuItem Header="Stratus" Click="OpenStratus" />
+                <MenuItem Header="Vegyes" Click="OpenMixed" />
+            </MenuItem>
+        </Menu>
+        
+        <Image Grid.Row="1" Grid.Column="0"
+               Source="{Binding CumulusImage, Converter={StaticResource BitmapToBitmapImageConverter}}"/>
+        <Image Grid.Row="1" Grid.Column="1"
+               Source="{Binding StratusImage, Converter={StaticResource BitmapToBitmapImageConverter}}"/>
+        <Image Grid.Row="1" Grid.Column="2"
+               Source="{Binding MixedImage, Converter={StaticResource BitmapToBitmapImageConverter}}"/>
+
+        <Image Grid.Row="2" Grid.Column="0"
+               Source="{Binding ThresholdCumulusImage, Converter={StaticResource BitmapToBitmapImageConverter}}"/>
+        <Image Grid.Row="2" Grid.Column="1"
+               Source="{Binding ThresholdStratusImage, Converter={StaticResource BitmapToBitmapImageConverter}}"/>
+        <Image Grid.Row="2" Grid.Column="2"
+               Source="{Binding ThresholdMixedImage, Converter={StaticResource BitmapToBitmapImageConverter}}"/>
+
+        <Slider Grid.Row="3" Grid.ColumnSpan="3"
+                Minimum="0" Maximum="256"
+                SmallChange="1" LargeChange="10"
+                Value="{Binding CloudUpper}"
+                ValueChanged="GetThresholdImages"/>
+        <Slider Grid.Row="5" Grid.ColumnSpan="3"
+                Minimum="0" Maximum="256"
+                SmallChange="1" LargeChange="10"
+                Value="{Binding SkyLower}"
+                ValueChanged="GetThresholdImages"/>
+        <!--<Slider Grid.Row="6" Grid.ColumnSpan="3"
+                Minimum="0" Maximum="256"
+                SmallChange="1" LargeChange="10"
+                Value="{Binding SkyUpper}"
+                ValueChanged="GetThresholdImages"/>-->
+    </Grid>
+</Window>
