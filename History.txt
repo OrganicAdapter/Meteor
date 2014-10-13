@@ -1,0 +1,10 @@
+2014. 09. 08.
+
+Márk:
+- Létrehoztam egy új VS projektet, új kezelõfelülettel, sokkal egyszerûbb kódbázisra törekedve.
+
+2014. 09. 19.
+
+Márk:
+- Implementáltam a már meglévõ algoritmusokból a Canny-set.
+- Dokumentáltam minden fontos osztályt, és ismertettem kommentekben az algoritmusok lényegi lépéseit.

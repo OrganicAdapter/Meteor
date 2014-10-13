@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bsmrq.Imaging.AForgeExtensions", "Bsmrq.Imaging.AForgeExtensions\Bsmrq.Imaging.AForgeExtensions.csproj", "{B248FA9C-FECE-4540-B491-C42F8562BF8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSP", "DSP\DSP.csproj", "{16699309-3D85-4EC7-9557-75AA3DCCBD8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSP.RainDetector", "DSP.RainDetector\DSP.RainDetector.csproj", "{341822E9-2123-4AA4-8D4B-757C73DF51EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
