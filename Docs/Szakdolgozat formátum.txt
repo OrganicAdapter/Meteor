@@ -1,0 +1,34 @@
+A szakdolgozatot A/4-es formátumban kell elkészíteni. Az oldaltükör ajánlott elhelyezési adatai: 
+alulról 40 mm, felül és a külso széleken 25 mm, a bekötés oldalán (a kötés miatt) 35 mm margóbeállítás. 
+Lapszámozás alul, lapközépen, a lapszéltol 20 mm-re.
+
+A folyószöveg ajánlott betutípusa Times New Roman, ajánlott mérete 12 pont, ajánlott sorköz 1,15, sorkizárt formátumban. 
+A szöveget értelem szerint kell tagolni.
+A fejezet címek arab számokkal legyenek számozva, ajánlott, hogy 14 pont méretu nagy-betus karakterekbol álljanak, 
+balra igazítva, lap tetején, balra igazítva elhelyezve. Az al-fejezetek címei legfeljebb három szám mélységéig 
+számozódjanak, 12 pontos félkövér karakterekkel, balra igazítva elhelyezve, elotte és utánna 1-1 sor térközzel.
+
+Javaslat a szakdolgozat felépítésére
+
+1.	Tartalomjegyzék (oldalszámozással) (kötelezo)
+2.	Rövid tartalmi összefoglaló (kötelezo)
+	3.	A megoldandó probléma megfogalmazása
+	4.	A probléma elemzése
+	5.	Az irodalom alapján a lehetséges megközelítési módok és megoldások áttekintése és elemzése
+	6.	A megoldási módszer kiválasztása, a választás indoklása
+	7.	A részletes specifikáció leírása
+	8.	A tervezés során végzett munkafázisok és tapasztalataik leírása
+	9.	A megvalósítás leírása
+	10.	Tesztelés
+	11.	Az eredmények bemutatása
+	12.	A megvalósítás elemzése, alkalmazásának és továbbfejlesztési lehetoségeinek számbavétele
+13.	A szakdolgozat tartalmi összefoglalója magyarul és egy idegen nyelven (kötelezo) 
+14.	Irodalomjegyzék (kötelezo)
+15.	Mellékletek
+
+Kötési minta
+
+A szakdolgozat kötése: fekete (mubor) kemény kötés aranyozott betukkel kitöltve, az alábbi mérethelyes minta alapján!
+(Betutípus: Times New Roman, esetleg Avangard)
+A könyv gerincén a név és az évszám feltüntetése kötelezo!
+
