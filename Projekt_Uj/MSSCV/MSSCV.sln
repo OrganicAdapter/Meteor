@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSCV", "MSSCV\MSSCV.csproj", "{163E351F-361C-476D-8ED8-46B798793D9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSCVLib", "MSSCVLib\MSSCVLib.csproj", "{FDAE8377-4154-4DFA-9B3A-FD7569794478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDetection", "CloudDetection\CloudDetection.csproj", "{C302717B-43CD-4552-8ECE-E785BFC5316B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{163E351F-361C-476D-8ED8-46B798793D9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{163E351F-361C-476D-8ED8-46B798793D9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{163E351F-361C-476D-8ED8-46B798793D9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{163E351F-361C-476D-8ED8-46B798793D9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
