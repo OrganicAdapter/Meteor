@@ -1,0 +1,5 @@
+IImageProcessService
+-------------------------------------
+string ProcessImage(Bitmap image);	//Teljes feldolgozás elvégzése (pl. kép -> "Cumulus, 5 okta", kép ->  "esõ, 60% bizonyosság")
+				//nincs szükségünk végsõ verzióban az eredmény kép alapú megjelenítésére, csak a mért eredményre)
+string GetSubResult(Bitmap image);	//bármilyen feldolgozás közben végzett érték, amit esetleg szeretnénk átadni a fõ proginak
