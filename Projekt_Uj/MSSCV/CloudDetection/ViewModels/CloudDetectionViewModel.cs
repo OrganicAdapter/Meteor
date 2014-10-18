@@ -28,6 +28,13 @@ namespace CloudDetection.ViewModels
         public NightDetectorService nightDetectorService { get; set; }
         private SaturationService saturationService { get; set; }
         private BlurService blurService { get; set; }
+        private CloudDetectorService cloudDetectorService { get; set; }
+        private CloudinessService cloudinessService { get; set; }
+        private CloudTypeService cloudTypeService { get; set; }
+
+        private Bitmap Original { get; set; }
+        private int Cloudiness { get; set; }
+        private string CloudType { get; set; }
 
         #endregion //Properties
 
@@ -38,6 +45,9 @@ namespace CloudDetection.ViewModels
             nightDetectorService = new NightDetectorService();
             saturationService = new SaturationService();
             blurService = new BlurService();
+            cloudDetectorService = new CloudDetectorService();
+            cloudinessService = new CloudinessService();
+            cloudTypeService = new CloudTypeService();
         }
 
         #endregion //Constructor
@@ -46,6 +56,8 @@ namespace CloudDetection.ViewModels
 
         public string ProcessImage(Bitmap input)
         {
+            Original = new Bitmap(input);
+
             if (nightDetectorService.IsNight(input))
             {
                 return "Night detected!";
@@ -56,8 +68,14 @@ namespace CloudDetection.ViewModels
                 SubresultAvailableEvent(this, "Saturation succesfull...");
                 blurService.Execute(input);
                 SubresultAvailableEvent(this, "Blur succesfull...");
+                cloudDetectorService.Execute(input);
+                SubresultAvailableEvent(this, "Cloud detection succesfull...");
+                Cloudiness = cloudinessService.Execute(input);
+                SubresultAvailableEvent(this, "Cloudiness: " + Cloudiness + " okta...");
+                CloudType = cloudTypeService.Execute(Original, input, Cloudiness);
+                SubresultAvailableEvent(this, "Cloud type: " + CloudType);
 
-                return "";
+                return CloudType + ", " + Cloudiness + " okta";
             }
         }
 
