@@ -21,7 +21,7 @@ namespace CloudDetection.Models
             cloudupper = upper;
         } 
 
-        public void Execute(Bitmap input)
+        public async Task Execute(Bitmap input)
         {
             BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
             int stride = bmData.Stride;

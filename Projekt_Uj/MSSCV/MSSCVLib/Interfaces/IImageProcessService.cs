@@ -16,7 +16,7 @@ namespace MSSCVLib.Interfaces
         /// </summary>
         /// <param name="image"> The input image. </param>
         /// <returns> Result of the image processing. </returns>
-        string ProcessImage(Bitmap input);
+        Task<string> ProcessImage(Bitmap input);
 
         /// <summary>
         /// Fires if any subresult is available and returns it as a string.

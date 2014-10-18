@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datas\Subresult.cs" />
+    <Compile Include="Helpers\OpenFileService.cs" />
     <Compile Include="Interfaces\IImageProcessService.cs" />
     <Compile Include="Interfaces\ISubProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

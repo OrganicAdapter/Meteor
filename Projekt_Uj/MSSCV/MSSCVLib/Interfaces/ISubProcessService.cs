@@ -13,6 +13,6 @@ namespace MSSCVLib.Interfaces
         /// Process the input image in place.
         /// </summary>
         /// <param name="input"> Input image. </param>
-        void Execute(Bitmap input);
+        Task Execute(Bitmap input);
     }
 }

@@ -77,6 +77,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudDetection\CloudDetection.csproj">
+      <Project>{c302717b-43cd-4552-8ece-e785bfc5316b}</Project>
+      <Name>CloudDetection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSSCVLib\MSSCVLib.csproj">
+      <Project>{fdae8377-4154-4dfa-9b3a-fd7569794478}</Project>
+      <Name>MSSCVLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

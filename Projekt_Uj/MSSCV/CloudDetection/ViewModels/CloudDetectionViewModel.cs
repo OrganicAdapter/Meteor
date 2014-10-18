@@ -54,7 +54,7 @@ namespace CloudDetection.ViewModels
 
         #region Methods
 
-        public string ProcessImage(Bitmap input)
+        public async Task<string> ProcessImage(Bitmap input)
         {
             Original = new Bitmap(input);
 
@@ -64,11 +64,11 @@ namespace CloudDetection.ViewModels
             }
             else
             {
-                saturationService.Execute(input);
+                await saturationService.Execute(input);
                 SubresultAvailableEvent(this, "Saturation succesfull...");
-                blurService.Execute(input);
+                await blurService.Execute(input);
                 SubresultAvailableEvent(this, "Blur succesfull...");
-                cloudDetectorService.Execute(input);
+                await cloudDetectorService.Execute(input);
                 SubresultAvailableEvent(this, "Cloud detection succesfull...");
                 Cloudiness = cloudinessService.Execute(input);
                 SubresultAvailableEvent(this, "Cloudiness: " + Cloudiness + " okta...");

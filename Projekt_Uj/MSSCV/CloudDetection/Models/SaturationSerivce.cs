@@ -14,7 +14,7 @@ namespace CloudDetection.Models
         private static byte red, green, blue;
         private static byte min;
 
-        public void Execute(Bitmap input)
+        public async Task Execute(Bitmap input)
         {
             BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
             int stride = bmData.Stride;
