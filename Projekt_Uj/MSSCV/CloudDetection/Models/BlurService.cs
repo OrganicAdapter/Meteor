@@ -11,6 +11,10 @@ namespace CloudDetection.Models
 {
     public class BlurService : ISubProcessService
     {
+        /// <summary>
+        /// Blur the image using AForge Blur algorythm in place.
+        /// </summary>
+        /// <param name="input">Original image</param>
         public async Task Execute(Bitmap input)
         {
             await Task.Factory.StartNew(() =>
