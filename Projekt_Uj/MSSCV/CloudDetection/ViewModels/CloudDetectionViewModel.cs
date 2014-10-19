@@ -25,7 +25,7 @@ namespace CloudDetection.ViewModels
 
         #region Properties
 
-        public NightDetectorService nightDetectorService { get; set; }
+        private NightDetectorService nightDetectorService { get; set; }
         private SaturationService saturationService { get; set; }
         private BlurService blurService { get; set; }
         private CloudDetectorService cloudDetectorService { get; set; }
@@ -56,12 +56,18 @@ namespace CloudDetection.ViewModels
 
         #region Methods
 
+        /// <summary>
+        /// Get the cloudiness and cloud type in string format.
+        /// </summary>
+        /// <param name="input">Original image</param>
+        /// <returns>Cloud type and cloudiness</returns>
         public async Task<string> ProcessImage(Bitmap input)
         {
             Original = new Bitmap(input);
 
             if (nightDetectorService.IsNight(input))
             {
+                SubresultAvailableEvent(this, "Cant't detect clouds at night!");
                 return "Night detected!";
             }
             else
@@ -99,7 +105,13 @@ namespace CloudDetection.ViewModels
                     return "Cloud detection failed!";
                 }
 
+                if (CloudType.Equals("Cumulus") && Cloudiness == 8)
+                {
+                    Cloudiness = 7;
+                    SubresultAvailableEvent(this, "Cloudiness modified to " + Cloudiness + " okta...");
+                }
 
+                SubresultAvailableEvent(this, "Cloud detection succesful!");
                 return CloudType + ", " + Cloudiness + " okta";
             }
         }

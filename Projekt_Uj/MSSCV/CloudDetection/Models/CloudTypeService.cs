@@ -67,8 +67,6 @@ namespace CloudDetection.Models
                 byte* p = (byte*)(void*)Scan0;
                 byte* p2 = (byte*)(void*)Scan2;
 
-                //Hisztogram készítése azokból a képpontokból, amik felhőhöz tartoznak
-                //Detektált felhőket tartalmazó kép segítségével
                 for (int y = 0; y < original.Height; ++y)
                 {
                     for (int x = 0; x < original.Width; x++)
