@@ -15,52 +15,64 @@ namespace CloudDetection.Models
         private int cloudupper;
 
 
+        /// <summary>
+        /// Sets up group limits.
+        /// </summary>
+        /// <param name="lower">Lower saturation value of the sky</param>
+        /// <param name="upper">Upper saturation value of clouds</param>
         public void SetValues(int lower, int upper)
         {
             skylower = lower;
             cloudupper = upper;
         } 
 
+        /// <summary>
+        /// Creates thresholded image for cloud detection in place.
+        /// </summary>
+        /// <param name="input">Saturated, blured image</param>
         public async Task Execute(Bitmap input)
         {
-            BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-            int stride = bmData.Stride;
-            System.IntPtr Scan0 = bmData.Scan0;
-
-            unsafe
-            {
-                byte* p = (byte*)(void*)Scan0;
-                int size = input.Height * input.Width;
-
-                for (int i = 0; i < size; ++i)
+            await Task.Factory.StartNew(() =>
                 {
-                    if (p[0] < cloudupper)
+                    BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+                    int stride = bmData.Stride;
+                    System.IntPtr Scan0 = bmData.Scan0;
+
+                    unsafe
                     {
-                        //Felhő
-                        p[0] = 255;
-                        p[1] = 255;
-                        p[2] = 255;
-                    }
-                    else if (p[0] <= skylower && p[0] >= cloudupper)
-                    {
-                        //Nem meghatározott
-                        p[0] = 0;
-                        p[1] = 255;
-                        p[2] = 0;
-                    }
-                    else
-                    {
-                        //Ég
-                        p[0] = 255;
-                        p[1] = 0;
-                        p[2] = 0;
+                        byte* p = (byte*)(void*)Scan0;
+                        int size = input.Height * input.Width;
+
+                        for (int i = 0; i < size; ++i)
+                        {
+                            if (p[0] < cloudupper)
+                            {
+                                //Clouds
+                                p[0] = 255;
+                                p[1] = 255;
+                                p[2] = 255;
+                            }
+                            else if (p[0] <= skylower && p[0] >= cloudupper)
+                            {
+                                //Not defined
+                                p[0] = 0;
+                                p[1] = 255;
+                                p[2] = 0;
+                            }
+                            else
+                            {
+                                //Sky
+                                p[0] = 255;
+                                p[1] = 0;
+                                p[2] = 0;
+                            }
+
+                            p += 3;
+                        }
                     }
 
-                    p += 3;
-                }
-            }
-
-            input.UnlockBits(bmData);
+                    input.UnlockBits(bmData);
+                });
         }
     }
 }

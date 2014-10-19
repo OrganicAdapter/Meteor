@@ -13,31 +13,32 @@ namespace CloudDetection.Models
         private static int avarage;
         private static float sum_avg;
 
-        public bool IsNight(Bitmap bit)
+        public bool IsNight(Bitmap input)
         {
-            Bitmap b = new Bitmap(bit);
-
-            BitmapData bmData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-            int stride = bmData.Stride;
-            System.IntPtr Scan0 = bmData.Scan0;
-
-            unsafe
+            using (Bitmap b = new Bitmap(input))
             {
-                byte* p = (byte*)(void*)Scan0;
-                int size = b.Height * b.Width;
+                BitmapData bmData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+                int stride = bmData.Stride;
+                System.IntPtr Scan0 = bmData.Scan0;
 
-                for (int i = 0; i < size; ++i)
+                unsafe
                 {
-                    avarage = (p[0] + p[1] + p[2]) / 3;
-                    sum_avg += avarage;
+                    byte* p = (byte*)(void*)Scan0;
+                    int size = b.Height * b.Width;
 
-                    p += 3;
+                    for (int i = 0; i < size; ++i)
+                    {
+                        avarage = (p[0] + p[1] + p[2]) / 3;
+                        sum_avg += avarage;
+
+                        p += 3;
+                    }
+
+                    sum_avg = sum_avg / size;
                 }
 
-                sum_avg = sum_avg / size;
+                b.UnlockBits(bmData);
             }
-
-            b.UnlockBits(bmData);
 
             if (sum_avg <= 100)
                 return true;

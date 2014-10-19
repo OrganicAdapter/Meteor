@@ -48,6 +48,8 @@ namespace CloudDetection.ViewModels
             cloudDetectorService = new CloudDetectorService();
             cloudinessService = new CloudinessService();
             cloudTypeService = new CloudTypeService();
+
+            cloudDetectorService.SetValues(56, 36);
         }
 
         #endregion //Constructor
@@ -66,14 +68,37 @@ namespace CloudDetection.ViewModels
             {
                 await saturationService.Execute(input);
                 SubresultAvailableEvent(this, "Saturation succesfull...");
+
                 await blurService.Execute(input);
                 SubresultAvailableEvent(this, "Blur succesfull...");
+
                 await cloudDetectorService.Execute(input);
                 SubresultAvailableEvent(this, "Cloud detection succesfull...");
+
                 Cloudiness = cloudinessService.Execute(input);
-                SubresultAvailableEvent(this, "Cloudiness: " + Cloudiness + " okta...");
+
+                if (Cloudiness != -1)
+                {
+                    SubresultAvailableEvent(this, "Cloudiness: " + Cloudiness + " okta...");
+                }
+                else
+                {
+                    SubresultAvailableEvent(this, "Cloudiness detection failed!");
+                    return "Cloud detection failed!";
+                }
+
                 CloudType = cloudTypeService.Execute(Original, input, Cloudiness);
-                SubresultAvailableEvent(this, "Cloud type: " + CloudType);
+
+                if (CloudType != null)
+                {
+                    SubresultAvailableEvent(this, "Cloud type: " + CloudType);
+                }
+                else
+                {
+                    SubresultAvailableEvent(this, "Cloudtype detection failed!");
+                    return "Cloud detection failed!";
+                }
+
 
                 return CloudType + ", " + Cloudiness + " okta";
             }

@@ -65,21 +65,25 @@
             // 
             // subresultGrid
             // 
+            this.subresultGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.subresultGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.subresultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.subresultGrid.Dock = System.Windows.Forms.DockStyle.Left;
             this.subresultGrid.Location = new System.Drawing.Point(0, 24);
             this.subresultGrid.Name = "subresultGrid";
-            this.subresultGrid.Size = new System.Drawing.Size(460, 474);
+            this.subresultGrid.Size = new System.Drawing.Size(399, 474);
             this.subresultGrid.TabIndex = 1;
             // 
             // resultGrid
             // 
+            this.resultGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.resultGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.resultGrid.Dock = System.Windows.Forms.DockStyle.Right;
-            this.resultGrid.Location = new System.Drawing.Point(466, 24);
+            this.resultGrid.Location = new System.Drawing.Point(405, 24);
             this.resultGrid.Name = "resultGrid";
-            this.resultGrid.Size = new System.Drawing.Size(246, 474);
+            this.resultGrid.Size = new System.Drawing.Size(307, 474);
             this.resultGrid.TabIndex = 2;
             // 
             // Form1

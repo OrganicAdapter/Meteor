@@ -19,6 +19,8 @@ namespace MSSCV
 
         private List<Subresult> Subresults { get; set; }
         private BindingSource SubresultsBinding { get; set; }
+        private List<Result> Results { get; set; }
+        private BindingSource ResultsBinding { get; set; }
 
 
         public Form1()
@@ -28,18 +30,27 @@ namespace MSSCV
 
             Subresults = new List<Subresult>();
             SubresultsBinding = new BindingSource();
+            Results = new List<Result>();
+            ResultsBinding = new BindingSource();
 
             InitializeComponent();
 
             SubresultsBinding.DataSource = Subresults;
             subresultGrid.DataSource = SubresultsBinding;
+
+            ResultsBinding.DataSource = Results;
+            resultGrid.DataSource = ResultsBinding;
         }
 
 
-        private void DetectCloudMenuItem_Click(object sender, EventArgs e)
+        private async void DetectCloudMenuItem_Click(object sender, EventArgs e)
         {
             var image = OpenFileService.OpenSingleImage();
-            var result = CloudDetector.ProcessImage(image);
+
+            if (image == null) return;
+
+            Results.Add(new Result() { Date = DateTime.Now.ToString(), Value = await CloudDetector.ProcessImage(image)});
+            ResultsBinding.ResetBindings(false);
         }
 
         private void SubresultAvailable(object sender, string result)

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datas\Result.cs" />
     <Compile Include="Datas\Subresult.cs" />
     <Compile Include="Helpers\OpenFileService.cs" />
     <Compile Include="Interfaces\IImageProcessService.cs" />

@@ -14,41 +14,49 @@ namespace CloudDetection.Models
         private static byte red, green, blue;
         private static byte min;
 
+        /// <summary>
+        /// Creates a saturation image from the original in place.
+        /// </summary>
+        /// <param name="input">Original image</param>
         public async Task Execute(Bitmap input)
         {
-            BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-            int stride = bmData.Stride;
-            System.IntPtr Scan0 = bmData.Scan0;
-
-            unsafe
-            {
-                byte* p = (byte*)(void*)Scan0;
-                int size = input.Height * input.Width;
-
-                for (int i = 0; i < size; ++i)
+            await Task.Factory.StartNew(() =>
                 {
-                    blue = p[0];
-                    green = p[1];
-                    red = p[2];
+                    BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+                    int stride = bmData.Stride;
+                    System.IntPtr Scan0 = bmData.Scan0;
 
-                    if (blue > green)
-                        min = green;
-                    else
-                        min = blue;
+                    unsafe
+                    {
+                        byte* p = (byte*)(void*)Scan0;
+                        int size = input.Height * input.Width;
 
-                    if (red < min)
-                        min = red;
+                        for (int i = 0; i < size; ++i)
+                        {
+                            blue = p[0];
+                            green = p[1];
+                            red = p[2];
 
-                    if (red == 0 && green == 0 && blue == 0)
-                        red = 1;
+                            if (blue > green)
+                                min = green;
+                            else
+                                min = blue;
 
-                    p[0] = p[1] = p[2] = (byte)(255 * (1 - (3 / (float)(red + green + blue)) * min));
+                            if (red < min)
+                                min = red;
 
-                    p += 3;
-                }
-            }
+                            //Avoiding devide by zero exception
+                            if (red == 0 && green == 0 && blue == 0)
+                                red = 1;
 
-            input.UnlockBits(bmData);
+                            p[0] = p[1] = p[2] = (byte)(255 * (1 - (3 / (float)(red + green + blue)) * min));
+
+                            p += 3;
+                        }
+                    }
+
+                    input.UnlockBits(bmData);
+                });
         }
     }
 }
