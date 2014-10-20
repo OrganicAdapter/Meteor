@@ -24,5 +24,24 @@ namespace MSSCVLib.Helpers
             else
                 return null;
         }
+
+        public static List<Bitmap> OpenMultipleImages()
+        {
+            var picker = new OpenFileDialog();
+            picker.RestoreDirectory = true;
+            picker.Multiselect = true;
+
+            if (picker.ShowDialog() == DialogResult.OK)
+            {
+                var images = new List<Bitmap>();
+
+                foreach (var item in picker.FileNames)
+                    images.Add(new Bitmap(item));
+
+                return images;
+            }
+            else
+                return null;
+        }
     }
 }

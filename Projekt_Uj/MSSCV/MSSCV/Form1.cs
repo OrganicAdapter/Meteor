@@ -45,11 +45,11 @@ namespace MSSCV
 
         private async void DetectCloudMenuItem_Click(object sender, EventArgs e)
         {
-            var image = OpenFileService.OpenSingleImage();
+            var images = OpenFileService.OpenMultipleImages();
 
-            if (image == null) return;
+            if (images == null) return;
 
-            Results.Add(new Result() { Date = DateTime.Now.ToString(), Value = await CloudDetector.ProcessImage(image)});
+            Results.Add(new Result() { Date = DateTime.Now.ToString(), Value = await CloudDetector.ProcessImage(images)});
             ResultsBinding.ResetBindings(false);
         }
 

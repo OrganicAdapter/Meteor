@@ -54,6 +54,7 @@
     <Compile Include="Models\CloudDetectorService.cs" />
     <Compile Include="Models\CloudinessService.cs" />
     <Compile Include="Models\CloudTypeService.cs" />
+    <Compile Include="Models\Datas\Result.cs" />
     <Compile Include="Models\NightDetectorService.cs" />
     <Compile Include="Models\SaturationSerivce.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
