@@ -33,6 +33,7 @@
             this.felhőMegnyitásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subresultGrid = new System.Windows.Forms.DataGridView();
             this.resultGrid = new System.Windows.Forms.DataGridView();
+            this.felhőMozgásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subresultGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultGrid)).BeginInit();
@@ -51,7 +52,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.felhőMegnyitásToolStripMenuItem});
+            this.felhőMegnyitásToolStripMenuItem,
+            this.felhőMozgásToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&Fájl";
@@ -86,6 +88,13 @@
             this.resultGrid.Size = new System.Drawing.Size(307, 474);
             this.resultGrid.TabIndex = 2;
             // 
+            // felhőMozgásToolStripMenuItem
+            // 
+            this.felhőMozgásToolStripMenuItem.Name = "felhőMozgásToolStripMenuItem";
+            this.felhőMozgásToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.felhőMozgásToolStripMenuItem.Text = "&Felhő mozgás...";
+            this.felhőMozgásToolStripMenuItem.Click += new System.EventHandler(this.CloudMovementMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,6 +122,7 @@
         private System.Windows.Forms.ToolStripMenuItem felhőMegnyitásToolStripMenuItem;
         private System.Windows.Forms.DataGridView subresultGrid;
         private System.Windows.Forms.DataGridView resultGrid;
+        private System.Windows.Forms.ToolStripMenuItem felhőMozgásToolStripMenuItem;
     }
 }
 

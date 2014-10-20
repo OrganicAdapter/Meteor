@@ -1,4 +1,5 @@
 ﻿using CloudDetection.ViewModels;
+using CloudMovement.ViewModels;
 using MSSCVLib.Datas;
 using MSSCVLib.Helpers;
 using System;
@@ -16,6 +17,8 @@ namespace MSSCV
     public partial class Form1 : Form
     {
         private CloudDetectionViewModel CloudDetector { get; set; }
+        private CloudMovementViewModel CloudMovement { get; set; }
+
 
         private List<Subresult> Subresults { get; set; }
         private BindingSource SubresultsBinding { get; set; }
@@ -27,6 +30,8 @@ namespace MSSCV
         {
             CloudDetector = new CloudDetectionViewModel();
             CloudDetector.SubresultAvailableEvent += SubresultAvailable;
+            CloudMovement = new CloudMovementViewModel();
+            CloudMovement.SubresultAvailableEvent += SubresultAvailable;
 
             Subresults = new List<Subresult>();
             SubresultsBinding = new BindingSource();
@@ -50,6 +55,16 @@ namespace MSSCV
             if (images == null) return;
 
             Results.Add(new Result() { Date = DateTime.Now.ToString(), Value = await CloudDetector.ProcessImage(images)});
+            ResultsBinding.ResetBindings(false);
+        }
+
+        private async void CloudMovementMenuItem_Click(object sender, EventArgs e)
+        {
+            var images = OpenFileService.OpenMultipleImages();
+
+            if (images == null) return;
+
+            Results.Add(new Result() { Date = DateTime.Now.ToString(), Value = await CloudMovement.ProcessImage(images) });
             ResultsBinding.ResetBindings(false);
         }
 
