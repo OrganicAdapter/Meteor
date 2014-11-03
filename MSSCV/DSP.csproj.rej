@@ -1,0 +1,28 @@
+--- DSP.csproj
++++ DSP.csproj
+@@ -56,6 +56,12 @@
+     <Reference Include="System.Xml" />
+   </ItemGroup>
+   <ItemGroup>
++    <Compile Include="DetectionParameterDialog.cs">
++      <SubType>Form</SubType>
++    </Compile>
++    <Compile Include="DetectionParameterDialog.Designer.cs">
++      <DependentUpon>DetectionParameterDialog.cs</DependentUpon>
++    </Compile>
+     <Compile Include="DSPAboutBox.cs">
+       <SubType>Form</SubType>
+     </Compile>
+@@ -76,9 +88,12 @@
+     <Compile Include="ImageForm.Designer.cs">
+       <DependentUpon>ImageForm.cs</DependentUpon>
+     </Compile>
++    <EmbeddedResource Include="DetectionParameterDialog.resx">
++      <DependentUpon>DetectionParameterDialog.cs</DependentUpon>
++    </EmbeddedResource>
+     <EmbeddedResource Include="DSPAboutBox.resx">
+       <DependentUpon>DSPAboutBox.cs</DependentUpon>
+     </EmbeddedResource>
+     <EmbeddedResource Include="DSPMainForm.resx">
+       <DependentUpon>DSPMainForm.cs</DependentUpon>
+     </EmbeddedResource>

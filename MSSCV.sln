@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSCVLib", "MSSCVLib\MSSCVLib.csproj", "{FDAE8377-4154-4DFA-9B3A-FD7569794478}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudDetection", "CloudDetection\CloudDetection.csproj", "{C302717B-43CD-4552-8ECE-E785BFC5316B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudMovement", "CloudMovement\CloudMovement.csproj", "{1DECB189-FD80-4A7B-B8B0-D9216B90D889}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Third-Party Projects", "Third-Party Projects", "{BB45A136-ED52-4AE5-9153-E828E015F273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bsmrq.Imaging.AForgeExtensions", "Bsmrq.Imaging.AForgeExtensions\Bsmrq.Imaging.AForgeExtensions.csproj", "{B248FA9C-FECE-4540-B491-C42F8562BF8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSSCV", "MSSCV\MSSCV.csproj", "{16699309-3D85-4EC7-9557-75AA3DCCBD8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RainDetector", "RainDetector\RainDetector.csproj", "{341822E9-2123-4AA4-8D4B-757C73DF51EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDAE8377-4154-4DFA-9B3A-FD7569794478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C302717B-43CD-4552-8ECE-E785BFC5316B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DECB189-FD80-4A7B-B8B0-D9216B90D889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DECB189-FD80-4A7B-B8B0-D9216B90D889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DECB189-FD80-4A7B-B8B0-D9216B90D889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DECB189-FD80-4A7B-B8B0-D9216B90D889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16699309-3D85-4EC7-9557-75AA3DCCBD8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341822E9-2123-4AA4-8D4B-757C73DF51EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B248FA9C-FECE-4540-B491-C42F8562BF8A} = {BB45A136-ED52-4AE5-9153-E828E015F273}
+	EndGlobalSection
+EndGlobal
