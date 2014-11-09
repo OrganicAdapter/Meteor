@@ -22,3 +22,9 @@ Márk:
 - Felület az esõcseppek kézzel történõ bejelölgetésére.
 - A bejelölt területek alapján a program teszteket futtat le, hogy kiderítse a fals pozitív/negatívokat, és a találatokat.
 - Közös solution Gerivel.
+
+2014. 11. 09.
+
+Geri:
+-Doksi javítása
+-Felho mozgás részhez szakirodalom keresése
