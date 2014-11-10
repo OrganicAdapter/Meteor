@@ -14,6 +14,7 @@ namespace CloudMovement.Models
         private int threshold = 20;
         private int windThreshold = 10;
 
+        private float harristhreshold = 500;
 
         public async Task<string> DetectDirection(List<Bitmap> inputList)
         {
@@ -24,20 +25,35 @@ namespace CloudMovement.Models
                 {
                     for (int i = 0; i < inputList.Count - 1; i++)
                     {
-                        var harris = new HarrisCornersDetector(0.04f, 500f);
-                        var firstImagePoints = harris.ProcessImage(inputList[i]).ToArray();
-                        var secondImagePoints = harris.ProcessImage(inputList[i + 1]).ToArray();
-
-                        var correlation = new CorrelationMatching(11, inputList[i], inputList[i + 1]);
-                        var matches = correlation.Match(firstImagePoints, secondImagePoints);
-
-                        var ransac = new RansacHomographyEstimator(0.0001, 0.1);
-                        var homography = ransac.Estimate(matches);
-
-                        if (Math.Abs(homography.OffsetX) >= windThreshold || Math.Abs(homography.OffsetY) >= windThreshold)
+                        try
                         {
-                            var directionDegrees = Math.Atan2(homography.OffsetY, homography.OffsetX) * (180 / Math.PI);
-                            degrees.Add(directionDegrees);
+                            var harris = new HarrisCornersDetector(0.04f, harristhreshold);
+                            var firstImagePoints = harris.ProcessImage(inputList[i]).ToArray();
+                            var secondImagePoints = harris.ProcessImage(inputList[i + 1]).ToArray();
+
+                            var correlation = new CorrelationMatching(11, inputList[i], inputList[i + 1]);
+                            var matches = correlation.Match(firstImagePoints, secondImagePoints);
+
+                            var ransac = new RansacHomographyEstimator(0.0001, 0.1);
+                            var homography = ransac.Estimate(matches);
+
+                            if (Math.Abs(homography.OffsetX) >= windThreshold || Math.Abs(homography.OffsetY) >= windThreshold)
+                            {
+                                var directionDegrees = Math.Atan2(homography.OffsetY, homography.OffsetX) * (180 / Math.PI);
+                                degrees.Add(directionDegrees);
+                            }
+                        }
+
+                        catch (ArgumentException)
+                        {
+                            i = i - 1;
+                            harristhreshold /= 2;
+                        }
+
+                        catch (IndexOutOfRangeException)
+                        {
+                            i = i - 1;
+                            harristhreshold /= 2;
                         }
                     }
 
