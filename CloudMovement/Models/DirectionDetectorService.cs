@@ -11,7 +11,7 @@ namespace CloudMovement.Models
 {
     public class DirectionDetectorService
     {
-        private int threshold = 20;
+        private int threshold = 10;
         private int windThreshold = 10;
 
         private float harristhreshold = 500;
@@ -68,34 +68,34 @@ namespace CloudMovement.Models
                         foreach (var direction in degrees)
                         {
                             if (direction <= 180 && direction >= 180 - threshold)
-                                //result = "NY";
+                                //result = "K";
                                 array[0]++;
                             else if (direction <= 180 - threshold && direction >= 90 + threshold)
-                                //result = "ÉNY";
+                                //result = "DK";
                                 array[1]++;
                             else if (direction <= 90 + threshold && direction >= 90 - threshold)
-                                //result = "É";
+                                //result = "D";
                                 array[2]++;
                             else if (direction <= 90 - threshold && direction >= threshold)
-                                //result = "ÉK";
+                                //result = "DNY";
                                 array[3]++;
                             else if (direction <= threshold && direction >= 0)
-                                //result = "K";
+                                //result = "NY";
                                 array[4]++;
                             else if (direction <= -180 + threshold)
-                                //result = "NY";
+                                //result = "K";
                                 array[0]++;
                             else if (direction <= -180 + threshold && direction >= -90 - threshold)
-                                //result = "DNY";
+                                //result = "ÉK";
                                 array[5]++;
                             else if (direction <= -90 + threshold && direction >= -90 - threshold)
-                                //result = "D";
+                                //result = "É";
                                 array[6]++;
                             else if (direction <= -threshold && direction >= -90 + threshold)
-                                //result = "DK";
+                                //result = "ÉNY";
                                 array[7]++;
                             else if (direction >= -threshold)
-                                //result = "K";
+                                //result = "NY";
                                 array[4]++;
                         }
 
@@ -112,21 +112,21 @@ namespace CloudMovement.Models
                         }
 
                         if (max == 0)
-                            result = "NY";
-                        else if (max == 1)
-                            result = "ÉNY";
-                        else if (max == 2)
-                            result = "É";
-                        else if (max == 3)
-                            result = "ÉK";
-                        else if (max == 4)
                             result = "K";
-                        else if (max == 5)
-                            result = "DNY";
-                        else if (max == 6)
-                            result = "D";
-                        else if (max == 7)
+                        else if (max == 1)
                             result = "DK";
+                        else if (max == 2)
+                            result = "D";
+                        else if (max == 3)
+                            result = "DNY";
+                        else if (max == 4)
+                            result = "NY";
+                        else if (max == 5)
+                            result = "ÉK";
+                        else if (max == 6)
+                            result = "É";
+                        else if (max == 7)
+                            result = "ÉNY";
                     }
                 });
 
