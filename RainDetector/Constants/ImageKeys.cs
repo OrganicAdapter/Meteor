@@ -26,6 +26,12 @@ namespace MSSCV.RainDetector.Constants
             public static readonly IDescriptedKey Canny = new DescriptedKey { Key = "ProcessedImages.Canny", Description = "Canny edge detection result" };
 
             public static readonly IDescriptedKey Threshold = new DescriptedKey { Key = "ProcessedImages.Threshold", Description = "Thresholded image" };
+
+            public static readonly IDescriptedKey ContrastStretch = new DescriptedKey { Key = "ProcessedImages.ContrastStretch", Description = "ContrastStretch image" };
+
+            public static readonly IDescriptedKey MorphReconstruction = new DescriptedKey { Key = "ProcessedImages.MorphReconstruction", Description = "MorphReconstruction image" };
+
+            public static readonly IDescriptedKey AddedImages = new DescriptedKey { Key = "ProcessedImages.AddedImages", Description = "Added images" };
         }
 
         public static class TestImages

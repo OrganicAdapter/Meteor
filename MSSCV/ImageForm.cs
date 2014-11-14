@@ -23,7 +23,7 @@ namespace MSSCV
 
         public ImageForm(IDictionary<IDescriptedKey, Bitmap> images)
         {
-            _rainDetectionService = new RaindropDetector();
+            _rainDetectionService = new MorphRaindropDetector();
             _rainDetectionTester = new RainDetectionTester(_rainDetectionService);
 
             InitializeComponent();

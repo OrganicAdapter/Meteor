@@ -56,9 +56,10 @@
     <Compile Include="Models\RaindropDetectionContext.cs" />
     <Compile Include="Models\RaindropDetectionTestResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\RaindropDetector.cs" />
+    <Compile Include="Services\CannyRaindropDetector.cs" />
     <Compile Include="Services\IRaindropDetector.cs" />
     <Compile Include="Services\IRainDetectionTester.cs" />
+    <Compile Include="Services\MorphRaindropDetector.cs" />
     <Compile Include="Services\RainDetectionTester.cs" />
   </ItemGroup>
   <ItemGroup>
