@@ -1,0 +1,19 @@
+Sorozat 36 képenként (1 kép 5 sec -> 1 min 12 kép -> vegyünk 3 percnyi fényképet valós használatban, ez 36 kép)
+
+83.33%
+
+Cumulus_1_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_33_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_65_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_97_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_129_7:	Cumulus - Stratus	//	7 - 8
+Cumulus_161_7:	Cumulus - Stratus	//	7 - 7
+Cumulus_193_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_225_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_257_7:	Cumulus - Stratus	//	7 - 7
+Cumulus_289_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_321_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_353_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_385_7:	Cumulus - Cumulus	//	7 - 6
+Cumulus_417_7:	Cumulus - Stratus	//	7 - 6
+Cumulus_417_7:	Cumulus - Stratus	//	0 - 0

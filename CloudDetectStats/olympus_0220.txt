@@ -1,0 +1,13 @@
+57.14%
+
+7 kép
+6 félig jó
+1 teljesen jó
+
+Cumulus_01_7:	Cumulus - Stratus	//	7 - 7
+Cumulus_03_6:	Cumulus - Cumulus	//	6 - 7
+Cumulus_04_1:	Cumulus - Cumulus	//	1 - 7
+Cumulus_05_2:	Cumulus - Stratus	//	2 - 2
+Cumulus_06_5:	Cumulus - Stratus	//	5 - 5
+Stratus_01_7:	Stratus - Cumulus	//	7 - 7
+Stratus_02_7:	Stratus - Cumulus	//	7 - 6
