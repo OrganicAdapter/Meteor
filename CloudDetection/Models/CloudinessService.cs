@@ -36,8 +36,8 @@ namespace CloudDetection.Models
                 clouds = GetCloudPercentageAdvanced(input);
                 okta = (int)Math.Round(clouds / eight);
 
-                //if (okta == 8 && diff >= size / 1000)
-                //    return 7;
+                if (okta == 0)
+                    return 1;
 
                 return okta;
             }

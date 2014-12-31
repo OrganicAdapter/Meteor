@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CloudDetection.Models.Datas.Result">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Datas\Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudDetection.ViewModels.CloudDetectionViewModel">
+    <Position X="1" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IIQAAgAAAAAIgiAAAAAAAAYACCQAgABAAACBCAAEAAQ=</HashCode>
+      <FileName>ViewModels\CloudDetectionViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloudDetection.Models.BlurService" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BlurService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CloudDetection.Models.CloudDetectorService" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgQAAAAAAAAQAAAEAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CloudDetectorService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CloudDetection.Models.CloudinessService">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CloudinessService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudDetection.Models.CloudTypeService">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAgAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Models\CloudTypeService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudDetection.Models.NightDetectorService">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAEAgAAA=</HashCode>
+      <FileName>Models\NightDetectorService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudDetection.Models.SaturationService" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAQAAQAAAIAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\SaturationSerivce.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -74,5 +74,52 @@ namespace CloudDetection.Models
                     input.UnlockBits(bmData);
                 });
         }
+
+        public async Task<Bitmap> GetImage(Bitmap input, int lower, int upper)
+        {
+            await Task.Factory.StartNew(() =>
+            {
+                BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+                int stride = bmData.Stride;
+                System.IntPtr Scan0 = bmData.Scan0;
+
+                unsafe
+                {
+                    byte* p = (byte*)(void*)Scan0;
+                    int size = input.Height * input.Width;
+
+                    for (int i = 0; i < size; ++i)
+                    {
+                        if (p[0] < upper)
+                        {
+                            //Clouds
+                            p[0] = 255;
+                            p[1] = 255;
+                            p[2] = 255;
+                        }
+                        else if (p[0] <= lower && p[0] >= upper)
+                        {
+                            //Not defined
+                            p[0] = 0;
+                            p[1] = 255;
+                            p[2] = 0;
+                        }
+                        else
+                        {
+                            //Sky
+                            p[0] = 255;
+                            p[1] = 0;
+                            p[2] = 0;
+                        }
+
+                        p += 3;
+                    }
+                }
+
+                input.UnlockBits(bmData);
+            });
+
+            return input;
+        }
     }
 }

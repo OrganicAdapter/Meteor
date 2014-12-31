@@ -75,6 +75,7 @@ namespace CloudDetectorDLL.Model
             var blur = new Blur();
             blur.Threshold = 0;
             blur.Divisor = 20;
+            //var blur = new GaussianBlur();
             var a = blur.Apply(bit);
 
             bit.Dispose();

@@ -1,9 +1,11 @@
-﻿using CloudDetection.Models;
+﻿using AForge.Imaging.Filters;
+using CloudDetection.Models;
 using CloudDetection.Models.Datas;
 using MSSCVLib.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +40,10 @@ namespace CloudDetection.ViewModels
         private string CloudType { get; set; }
         private List<Result> Results { get; set; }
 
+
+        public int CloudUpper { get; set; }
+        public int SkyLower { get; set; }
+
         #endregion //Properties
 
         #region Constructor
@@ -51,12 +57,47 @@ namespace CloudDetection.ViewModels
             cloudinessService = new CloudinessService();
             cloudTypeService = new CloudTypeService();
 
-            cloudDetectorService.SetValues(56, 36);
+            SetValues();
         }
 
         #endregion //Constructor
 
         #region Methods
+
+        public async void SetValues()
+        {
+            if (!File.Exists("cloudConfig.txt"))
+            {
+                cloudDetectorService.SetValues(56, 36);
+            }
+            else
+            {
+                using (var sr = new StreamReader("cloudConfig.txt"))
+                {
+                    CloudUpper = int.Parse(await sr.ReadLineAsync());
+                    SkyLower = int.Parse(await sr.ReadLineAsync());
+
+                    cloudDetectorService.SetValues(CloudUpper, SkyLower);
+                }
+            }
+        }
+
+        public async void SaveValues(int cloudUpper, int skyLower)
+        {
+            try
+            {
+                using (var sw = new StreamWriter("cloudConfig.txt"))
+                {
+                    await sw.WriteLineAsync(cloudUpper.ToString());
+                    await sw.WriteLineAsync(skyLower.ToString());
+                }
+            }
+
+            catch (IOException)
+            { 
+            
+            }
+        }
 
         /// <summary>
         /// Get the cloudiness and cloud type in string format.
@@ -67,6 +108,10 @@ namespace CloudDetection.ViewModels
         {
             await Calculate(inputList);
             GetCloudiness();
+
+            if (Cloudiness == -1)
+                return "Night";
+
             GetCloudType();
 
             return CloudType + ", " + Cloudiness + " okta";
@@ -144,18 +189,36 @@ namespace CloudDetection.ViewModels
 
             var cloudMed = new int[9];
 
+            var allZero = true;
+
             foreach (var item in cloudinesses)
-                cloudMed[item]++;
-
-            var max = 0;
-
-            for (int i = 0; i < cloudMed.Length - 1; i++)
             {
-                if (cloudMed[i] > cloudMed[i + 1])
-                    max = i;
+                if (item != 0)
+                {
+                    allZero = false;
+                    break;
+                }
             }
 
-            Cloudiness = max;
+            if (allZero)
+            {
+                Cloudiness = -1;
+            }
+            else
+            {
+                foreach (var item in cloudinesses)
+                    cloudMed[item]++;
+
+                var max = 0;
+
+                for (int i = 0; i < cloudMed.Length - 1; i++)
+                {
+                    if (cloudMed[i] > cloudMed[i + 1])
+                        max = i;
+                }
+
+                Cloudiness = max;
+            }
         }
 
         private void GetCloudType()
@@ -182,6 +245,38 @@ namespace CloudDetection.ViewModels
             }
 
             CloudType = (max == 0) ? "Cumulus" : (max == 1) ? "Stratus" : "Night";
+        }
+
+        public async Task<Bitmap> GetThresholdedImage(Bitmap input, int lower, int upper)
+        {
+            try
+            {
+                await saturationService.Execute(input);
+                await blurService.Execute(input);
+
+                return await cloudDetectorService.GetImage(input, lower, upper);
+            }
+
+            catch
+            {
+                return null;
+            }
+        }
+
+        public void AutoConfigureThresholds(Bitmap input)
+        {
+            var gray = new Grayscale(0.2125, 0.7154, 0.0721);
+            var image = gray.Apply(input);
+
+            var otsu = new OtsuThreshold();
+
+            otsu.ApplyInPlace(image);
+            var threshold = otsu.ThresholdValue;
+
+            SaveValues(threshold - 30, threshold + 100);
+            SetValues();
+
+            image.Dispose();
         }
 
         #endregion //Methods

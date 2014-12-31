@@ -15,6 +15,7 @@ namespace CloudMovement.Models
         private int windThreshold = 10;
 
         private float harristhreshold = 500;
+        private float k = 0.04f;
 
         public async Task<string> DetectDirection(List<Bitmap> inputList)
         {
@@ -27,9 +28,14 @@ namespace CloudMovement.Models
                     {
                         try
                         {
-                            var harris = new HarrisCornersDetector(0.04f, harristhreshold);
+                            var harris = new HarrisCornersDetector(k, harristhreshold);
                             var firstImagePoints = harris.ProcessImage(inputList[i]).ToArray();
                             var secondImagePoints = harris.ProcessImage(inputList[i + 1]).ToArray();
+
+                            if (firstImagePoints.Count() == 0)
+                            {
+                                var a = "";
+                            }
 
                             var correlation = new CorrelationMatching(11, inputList[i], inputList[i + 1]);
                             var matches = correlation.Match(firstImagePoints, secondImagePoints);
@@ -54,6 +60,13 @@ namespace CloudMovement.Models
                         {
                             i = i - 1;
                             harristhreshold /= 2;
+                        }
+
+                        catch (OutOfMemoryException)
+                        {
+                            i = i - 1;
+                            //harristhreshold /= 10;
+                            k += 0.02f;
                         }
                     }
 

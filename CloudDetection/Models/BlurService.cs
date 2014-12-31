@@ -19,10 +19,18 @@ namespace CloudDetection.Models
         {
             await Task.Factory.StartNew(() =>
                 {
-                    var blur = new Blur();
-                    blur.Threshold = 0;
-                    blur.Divisor = 20;
-                    blur.ApplyInPlace(input);
+                    try
+                    {
+                        var blur = new Blur();
+                        blur.Threshold = 0;
+                        blur.Divisor = 20;
+                        blur.ApplyInPlace(input);
+                    }
+
+                    catch
+                    { 
+                        
+                    }
                 });
         }
     }

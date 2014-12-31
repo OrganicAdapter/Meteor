@@ -22,40 +22,48 @@ namespace CloudDetection.Models
         {
             await Task.Factory.StartNew(() =>
                 {
-                    BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-                    int stride = bmData.Stride;
-                    System.IntPtr Scan0 = bmData.Scan0;
-
-                    unsafe
+                    try
                     {
-                        byte* p = (byte*)(void*)Scan0;
-                        int size = input.Height * input.Width;
+                        BitmapData bmData = input.LockBits(new Rectangle(0, 0, input.Width, input.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+                        int stride = bmData.Stride;
+                        System.IntPtr Scan0 = bmData.Scan0;
 
-                        for (int i = 0; i < size; ++i)
+                        unsafe
                         {
-                            blue = p[0];
-                            green = p[1];
-                            red = p[2];
+                            byte* p = (byte*)(void*)Scan0;
+                            int size = input.Height * input.Width;
 
-                            if (blue > green)
-                                min = green;
-                            else
-                                min = blue;
+                            for (int i = 0; i < size; ++i)
+                            {
+                                blue = p[0];
+                                green = p[1];
+                                red = p[2];
 
-                            if (red < min)
-                                min = red;
+                                if (blue > green)
+                                    min = green;
+                                else
+                                    min = blue;
 
-                            //Avoiding devide by zero exception
-                            if (red == 0 && green == 0 && blue == 0)
-                                red = 1;
+                                if (red < min)
+                                    min = red;
 
-                            p[0] = p[1] = p[2] = (byte)(255 * (1 - (3 / (float)(red + green + blue)) * min));
+                                //Avoiding devide by zero exception
+                                if (red == 0 && green == 0 && blue == 0)
+                                    red = 1;
 
-                            p += 3;
+                                p[0] = p[1] = p[2] = (byte)(255 * (1 - (3 / (float)(red + green + blue)) * min));
+
+                                p += 3;
+                            }
                         }
+
+                        input.UnlockBits(bmData);
                     }
 
-                    input.UnlockBits(bmData);
+                    catch
+                    { 
+                    
+                    }
                 });
         }
     }
