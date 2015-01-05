@@ -1,0 +1,22 @@
+80%
+
+15 kép
+4 félig jó
+10 teljesen jó
+1 rossz
+
+Cumulus_01_5:	Cumulus - Cumulus	//	5 - 2
+Cumulus_02_5:	Cumulus - Cumulus	//	5 - 1
+Cumulus_03_5:	Cumulus - Clear		//	5 - 0
+Cumulus_04_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_05_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_06_7:	Cumulus - Cumulus	//	7 - 7
+Cumulus_07_7:	Cumulus - Stratus	//	7 - 8
+Stratus_01_8:	Stratus - Cumulus	//	8 - 7
+Stratus_02_8:	Stratus - Stratus	//	8 - 7
+Stratus_03_8:	Stratus - Stratus	//	8 - 8
+Stratus_04_8:	Stratus - Stratus	//	8 - 8
+Stratus_05_8:	Stratus - Stratus	//	8 - 7
+Stratus_06_8:	Stratus - Stratus	//	8 - 7
+Stratus_07_8:	Stratus - Stratus	//	8 - 7
+Stratus_08_8:	Stratus - Stratus	//	8 - 7

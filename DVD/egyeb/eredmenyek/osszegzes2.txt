@@ -1,0 +1,22 @@
+491 kép (sorozat és az elozo 37 kép összegezve)
+
+107 félig jó		(vagy a borultság vagy a típus egyezik)
+374 teljesen jó		(borultság és típus egyezik)
+10 rossz		(semmi nem egyezik)
+
+Összesen: 		87,06%		(elért eredmény: (félig * 0.5 + teljesen) / összes)
+
+Fals negatív: 1		0.3%		(teljesen jó képek hány %-a fals negatív)
+Fals pozitív: 8		6.9%		(nem teljesen jó képek hány %-a fals pozitív)
+Jó: 373			99.7%		(teljesen jó képek hány %-a NEM fals negatív)
+Rossz: 109 		93.1%		(nem teljesen jó képek hány %-a NEM fals pozitív)
+
+Hibás...: 5 		4.6%		(nem teljes lefedettségbol adódó hiba)
+Hibás: 104 		95.4%		(program hibájából adódó hiba)
+
+Esos: 7					(összes esos kép)
+Esos jó: 6		85.71%		
+Esos rossz: 1		14.28%
+
+20 borultság miatt, 0 fals pozitív, 4 nem teljes fedettség miatt
+96 típus miatt, 7 fals pozitív

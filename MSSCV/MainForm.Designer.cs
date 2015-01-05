@@ -43,6 +43,9 @@
             this.cloudThresholdsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automaticToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windDirectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.resultGrid = new System.Windows.Forms.DataGridView();
             this.subresultGrid = new System.Windows.Forms.DataGridView();
@@ -135,7 +138,8 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cloudThresholdsToolStripMenuItem});
+            this.cloudThresholdsToolStripMenuItem,
+            this.windDirectionToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "&Settings";
@@ -162,6 +166,29 @@
             this.manualToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.manualToolStripMenuItem.Text = "&Manual";
             this.manualToolStripMenuItem.Click += new System.EventHandler(this.OpenManualConfiguration);
+            // 
+            // windDirectionToolStripMenuItem
+            // 
+            this.windDirectionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripTextBox2});
+            this.windDirectionToolStripMenuItem.Name = "windDirectionToolStripMenuItem";
+            this.windDirectionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.windDirectionToolStripMenuItem.Text = "&Wind direction";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "10";
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.tollstripTextBox_TextChanged);
+            // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox2.Text = "0";
+            this.toolStripTextBox2.TextChanged += new System.EventHandler(this.tollstripTextBox_TextChanged);
             // 
             // resultGrid
             // 
@@ -225,6 +252,9 @@
         private System.Windows.Forms.ToolStripMenuItem cloudThresholdsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem automaticToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windDirectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
     }
 }
 

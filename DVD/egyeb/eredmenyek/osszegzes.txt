@@ -1,0 +1,83 @@
+37 különbözo képen tesztelve (nem sorozat -> sorozat nem változatos, így ilyen teszt is ajánlott)
+
+16 félig jó		(vagy a borultság vagy a típus egyezik)
+20 teljesen jó		(borultság és típus egyezik)
+1 rossz			(semmi nem egyezik)
+
+Összesen: 		75.67%		(elért eredmény: (félig * 0.5 + teljesen) / összes)
+
+Fals negatív: 1		5%		(teljesen jó képek hány %-a fals negatív)
+Fals pozitív: 8		47.05%		(nem teljesen jó képek hány %-a fals pozitív)
+Jó: 19			95%		(teljesen jó képek hány %-a NEM fals negatív)
+Rossz: 9 		52.94%		(nem teljesen jó képek hány %-a NEM fals pozitív)
+
+Hibás...: 5 		55.55%		(nem teljes lefedettségbol adódó hiba)
+Hibás: 4 		44.44%		(program hibájából adódó hiba)
+
+Esos: 7					(összes esos kép)
+Esos jó: 6		85.71%
+Esos rossz: 1		14.28%
+
+Elemzés
+-------
+(mappánként idorendi sorrendben haladva (olympus_??-??))
+(kép sorszáma -> értékelés)
+(hibás... -> nem teljes lefedettségbol adódó borultság hiba)
+
+16-ból
+Borultság miatt:
+4db -> 0 fals pozitív -> 4 nem teljes fedettségbol adódó
+Típus miatt:
+12db -> 7 fals pozitív
+
+Hibák
+-------
+01_5 -> hibás...	X
+02_5 -> hibás...	X
+03_5 -> hibás...	X
+07_7 -> fals pozitív	
+01_8 -> fals pozitív
+-------
+03_8 -> hibás		
+07_8 -> fals pozitív	
+08_8 -> fals pozitív
+09_8 -> fals pozitív
+-------
+01_7 -> hibás		
+04_1 -> hibás...	X
+05_2 -> hibás
+06_5 -> hibás 
+01_7 -> fals pozitív
+02_7 -> fals pozitív
+------- 
+05_8 -> hibás (Esos)
+
+
+
+Jók
+-------
+04_7 -> jó
+05_7 -> jó
+06_7 -> jó
+02_8 -> fals negatív
+03_8 -> jó
+04_8 -> jó
+05_8 -> jó
+06_8 -> jó
+07_8 -> jó
+08_8 -> jó
+-------
+01_8 -> jó
+02_8 -> jó (Esos)
+04_8 -> jó (Esos)
+05_8 -> jó
+06_8 -> jó
+-------
+03_6 -> jó
+-------
+01_8 -> jó (Esos)
+02_8 -> jó (Esos)
+03_8 -> jó (Esos)
+04_8 -> jó (Esos)
+
+
